@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<head>
+    <title>To do</title>
+    <script src="https://kit.fontawesome.com/f15c442aba.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+</head>
+
+<body>
+    <h1>To Do List</h1>
+    <div id="userInput">
+        <form id="inputForm">
+            <input type="text" name="toDo" id="toDoField" placeholder="Type your item here" autocomplete="off">
+            <input type="submit" value="Add item" id="toDoSubmit">
+        </form>
+    </div>
+    <div id="todoList">
+        <div class="toDoItem">
+            <p>Do 100 JS Projects</p>
+            <div class="item-icons">
+                <i class="far fa-check-circle"></i>
+                <a href="#" class="edit-item mx-2 item-icon"><i class="far fa-edit"></i></a>
+                <a href="#" class="delete-item item-icon"><i class="far fa-times-circle"></i></a>
+               </div>
+        </div>
+    </div>
+    <button id="clearAll">Clear all items</button>
+</body>
