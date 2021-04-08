@@ -19,7 +19,8 @@ const app = {
 
     createItem(item){
         const newItem = new Item(item);
-        console.log(newItem.htmlString);
+        const itemList = document.getElementById("toDoList");
+        itemList.innerHTML += newItem.htmlString;
     }
 };
 
