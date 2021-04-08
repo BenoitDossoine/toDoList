@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0 20%;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#userInput{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#toDoField{
+    margin: 0;
+
+    box-sizing: border-box;
+    width: 80%;
+}
+
+#toDoSubmit{
+    margin: 0;
+    box-sizing: border-box;
+    width: 19%;
+}
