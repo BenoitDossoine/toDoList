@@ -8,6 +8,8 @@ const app = {
         toDoForm.addEventListener("submit", this.submitHandler);
 
         const clearButton = document.getElementById("clearAll");
+        clearButton.addEventListener("click", this.clearAll);
+
         this.fetchList();
     },
 
@@ -28,33 +30,27 @@ const app = {
             const emptyArr = JSON.stringify([]);
             localStorage.setItem("toDoList", emptyArr);
         } else {
-            
-            list.forEach(function (value) {
-                const item = value;
+
+            list.forEach(function (item) {
                 const html = document.createElement("div.toDoItem");
-                html.innerHTML = `
-               <p>${item._item}</p>
-               <div class="item-icons">
-                   <a href="#"><i class="far fa-check-circle"></i></a>
-                   <a href="#" class="edit-item mx-2 item-icon"><i class="far fa-edit"></i></a>
-                   <a href="#" class="delete-item item-icon"><i class="far fa-times-circle"></i></a>
-               </div>`;
+                html.innerHTML = item._htmlString;
                 toDoContainer.appendChild(html);
             });
         }
-
-
-
-
     },
 
     createItem(item) {
         const newItem = new Item(item);
-        console.log(newItem.htmlString);
+    
         const listStored = JSON.parse(localStorage.getItem("toDoList"));
         listStored.push(newItem);
         localStorage.setItem("toDoList", JSON.stringify(listStored));
         this.fetchList();
+    },
+
+    clearAll() {
+        localStorage.removeItem("toDoList");
+        app.fetchList();
     }
 };
 
